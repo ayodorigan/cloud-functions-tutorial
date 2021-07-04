@@ -221,5 +221,6 @@ When everything is ok, you deploy the functions/code to firebase using the follo
 You can use post man to send data to realtime using get request or firebase using the following url</br>
 `https://[PROJECT_ID].firebaseio.com/fb-test.json?num=3`</br>
 where *PROJECT_ID* is the id of your project.
-this whole url can be found in the real-time DB page as the path
+this whole url can be found in the real-time DB page as the path. like below
+
 *ftb-test* id the node name
