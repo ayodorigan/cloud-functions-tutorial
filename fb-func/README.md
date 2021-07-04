@@ -1,21 +1,21 @@
 ## Introduction
-Traditionally, web or even mobile applications required back-end codes to run some processes for the users such as sending them notificastions when something occurrs i.e commeting on  post on social media app, seuch backend also were or are used for image/file processing before they get stored such as compressing or scaling its sizes and such.
-All these happens on the server hosted somewhere.
+Traditionally, web or even mobile applications required back-end codes to run some processes for the users such as sending them notifications when something occurs i.e commenting on a post on a social media app, such backend also were or are used for image/file processing before they get stored such as compressing or scaling its sizes and such.
+All these happen on the server hosted somewhere.
 
-With the advancement in technology, google bring us cliud functions in firebase which allows developers to write code running in the cloud. These comprises of functions that are excecuted in the cloud or simply called cloud functions.
+With the advancement in technology, google bring us cloud functions in firebase which allows developers to write code running in the cloud. These comprise of functions that are executed in the cloud or simply called cloud functions.
 
-Cloud functions have various advanteges to developers such as:
-1. **Scalability** - This means you you can easily scale them to meet your current needs i.t when you have a steep user growth.
+Cloud functions have various advantages to developers such as:
+1. **Scalability** - This means you can easily scale them to meet your current needs i.t when you have a steep user growth.
 
-2. **Deployment** - You get to deploy clpud functions with a single command.
+2. **Deployment** - You get to deploy cloud functions with a single command.
 
-3. **Maintanability** - With Cloud functions you do not need to maintain a server hence reducing maintenance cost.
+3. **Maintainability** - With Cloud functions you do not need to maintain a server hence reducing maintenance cost.
 
-4. **Cost** - Compared to pre-provisional virtual cloud machines, its very cost efective as you only pay when the code runs.
+4. **Cost** - Compared to pre-provisional virtual cloud machines, it's very cost-effective as you only pay when the code runs.
 
-Clound functions also have some drabacks or disadvantages that you have to be aware of:
+Cloud functions also have some drawbacks or disadvantages that you have to be aware of:
 1. **Debugging** -  Cloud functions can be so difficult to debug even as there are already tools like cloud monitoring and emulators.
-2. **Control** - They can be difficult to control as you may need to sync monitoring, analytics and deployment scripts with an existing system.
+2. **Control** - They can be difficult to control as you may need to sync monitoring, analytics, and deployment scripts with an existing system.
 3. **Complexity** -  They can add some level of complexity to your architecture making it somewhat difficult to understand.
 
 
@@ -26,56 +26,56 @@ Clound functions also have some drabacks or disadvantages that you have to be aw
 5. Event-Driven - Triggered by events
 
 ### Functions of Cloud Function
-Tirggered by an action, cloud function can perform the following:
+Triggered by an action, cloud function can perform the following:
 1. Data Processing i.e Recording logs for analysis
 2. Image processing and Analysis - Can extract some information from an image for analysis
 3. Sending push notifications to users
-4. Cloud functions can also be used by IoT --Internet of Things to peocess incoming data for analysis.
+4. Cloud functions can also be used by IoT --Internet of Things to process incoming data for analysis.
 
 
 ## Cloud function Triggers
-As I have mentioned ealier, cloud functions are event driven, meaning they are triggered by an event.
-Lets see some of the commonly used triggers to run cloud functions.
+As I have mentioned earlier, cloud functions are event-driven, meaning they are triggered by an event.
+Let's see some of the commonly used triggers to run cloud functions.
 
 ### 1. Realtime Database Triggers
-These are triggers that happen from the firebase real time database.
+These are triggers that happen from the firebase real-time database..</br>
 You register events on nodes or db paths i.e
-`function.database.ref(/followers)`
+`function.database.ref(/followers)`.</br>
 In the above example *function.database.ref* registers a listener to the node called *followers*
-We can also use a wildcard to define dynamic part of the path i.e
-`functions.database.ref('/followers/{userid}')`
+We can also use a wildcard to define the dynamic part of the path i.e.</br>
+`functions.database.ref('/followers/{userid}')`.</br>
 where the value of *userid* changes dynamically
 
-Above you see we are using *ref* function that will register all the floowing events
+Above you see we are using the *ref* function that will register all the following events
 1. *onCreate()* -  Triggered when a new data is added into the node
-2. *onWrite()* -  Triggered when a new data is created or changed or destroyed
-3. *onUpdate()* - Triggered when data is upadated
+2. *onWrite()* -  Triggered when new data is created or changed or destroyed
+3. *onUpdate()* - Triggered when data is updated
 4. *onDelete()* - Triggered when the data is deleted.
 
-If you want to listen to a particular function among the ones listed above then you need to call it from the *ref* function as follows.
-`functions.database.ref('/followers/{userid}').onCreate( event => {})`
+If you want to listen to a particular function among the ones listed above then you need to call it from the *ref* function as follows..</br>
+`functions.database.ref('/followers/{userid}').onCreate( event => {})`.</br>
  Above event will be triggered when you get a new follower
 
  ## 2. Cloud Storage Triggers
  This triggers comes from Cloud storage. They have same event listeners like in Realtime db.
- To register a cloud storage function you do the following:
- `functions.storage.object().onChange(event => {})`
+ To register a cloud storage function you do the following:.</br>
+ `functions.storage.object().onChange(event => {})`.</br>
  where *object()* is the default storage bucket.
 
- To specify a bucket you do the following:
- `functions.storage.bucket('bucketName').onChange(event => {})`
+ To specify a bucket you do the following:.</br>
+ `functions.storage.bucket('bucketName').onChange(event => {})`.</br>
 
 The following are the event handlers you can use:
 *event.data.name*: This is the file path of the file in the bucket
-*event.data.contentType*: This is the  content type of the file
-*event.data.resourceState*: Has 2 values i.e ‘exists’ or ‘not_exists’. The ‘not_exists’ value is set if the file / folder has been deleted.
+*event. data.contentType*: This is the content type of the file
+*event. data.resource state*: Has 2 values i.e ‘exists’ or ‘not_exists’. The ‘not_exists’ value is set if the file/folder has been deleted.
 *event.data*: This is the storage object
-event.data.metageneration: This is the number of times the metadata of the file has been generated. For new objects the initial value is always 1.
+event. data.meta generation: This is the number of times the metadata of the file has been generated. For new objects, the initial value is always 1.
 *event.data.bucket*: This is the file storage bucket
 
 ## 3. HTTP Triggers
-These are trigeers from firebase Api i.e
-`functions.https.onRequest((request, response) => {})`
+These are trigeers from firebase Api i.e.</br>
+`functions.https.onRequest((request, response) => {})`.</br>
 We will use this a we do not have to app to pushfor us data to db
 
 ## Diving into the code
@@ -85,35 +85,35 @@ We will use this a we do not have to app to pushfor us data to db
 3. firebase-tools
 
 ### Getting started
-First create a project on firebase and enable functions then enable rela time database
+First, create a project on firebase and enable functions then enable real-time database
 
 #### 1. Installing Nodejs
 Go to !(Download Nodejs)[https://nodejs.org/en/download/] or !(Install Nodejs)[https://nodejs.dev/learn/how-to-install-nodejs] and check how to install nodejs on the OS you are using
-This will also install npm packege manager for nodejs
+This will also install npm package manager for nodejs
 
 #### 2. Installing firebase-tools
-This is what you will use to create and deploy your cloud function.
-`npm install -g firebase-tools`
+This is what you will use to create and deploy your cloud function.</br>
+`npm install -g firebase-tools`.</br>
 
 ### 3. Initializing your project
 Follow the steps to initialize your cloud function project
-1. Login to firebase - you will be redirected to the browser to login
-`firabase login`
+1. log in to firebase - you will be redirected to the browser to login.</br>
+`firabase login`.</br>
 
-2. Create a working directory
-`mkdir fb-test-function`
+2. Create a working directory.</br>
+`mkdir fb-test-function`.</br>
 
-3. Enter into the created dir
-`cd fb-test-function`
+3. Enter into the created dir.</br>
+`cd fb-test-function`.</br>
 
-2. Run the following to init your firestore and accepts all the default values for this project
-`firebase init functions`
+2. Run the following to init your firestore and accepts all the default values for this project.</br>
+`firebase init functions`.</br>
 You will be asked to select the firebase project to use. 
-You can also select the option *[create a new project]* to add a new project to you logged in account
-To intall all the required dependecies, select *Yes* for the question *“Do you want to install dependencies with npm now?”
-You can slso selecy *Yes* for Question *Do you want to use ESLint to catch probable bugs and enforce style*
+You can also select the option *[create a new project]* to add a new project to your logged in account
+To install all the required dependencies, select *Yes* for the question *“Do you want to install dependencies with npm now?”
+You can also select *Yes* for Question *Do you want to use ESLint to catch probable bugs and enforce style*
 
-At this point the firebase cloud function is set up and we are ready to start writing code but before that lets discuss abit about the project structure
+At this point, the firebase cloud function is set up and we are ready to start writing code but before that let's discuss a bit about the project structure
 Lookin into the folder we have the following files
 *node_modules:* is a directory where your dependencies (declared in package.json) are installed
 *firebase.json:* Describes properties for your project
@@ -214,5 +214,12 @@ Check the code in the *index.js* file
 
 
 ## Deploying the function to firebase
-When everytthing is ok, you deploy the fuction/code to firebase using the following example
+When everything is ok, you deploy the functions/code to firebase using the following example.</br>
 `firebase deploy --only functions`
+
+## Testing the app
+You can use post man to send data to realtime using get request or firebase using the following url</br>
+`https://[PROJECT_ID].firebaseio.com/fb-test.json?num=3`</br>
+where *PROJECT_ID* is the id of your project.
+this whole url can be found in the real-time DB page as the path
+*ftb-test* id the node name
