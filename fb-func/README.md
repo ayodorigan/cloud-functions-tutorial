@@ -115,7 +115,7 @@ You can also select *Yes* for Question *Do you want to use ESLint to catch proba
 
 At this point, the firebase cloud function is set up and we are ready to start writing code but before that let's discuss a bit about the project structure
 Looking into the folder we have the following files
-![alt text](https://github.com/ayodorigan/cloud-functions-tutorial/blob/main/fb-func/screenshots/Screenshot%202021-07-04%20at%2012.17.37.png)
+![alt text](https://github.com/ayodorigan/cloud-functions-tutorial/blob/main/fb-func/screenshots/Screenshot%202021-07-04%20at%2012.17.37.png)</br>
 *node_modules:* is a directory where your dependencies (declared in package.json) are installed
 *firebase.json:* Describes properties for your project
 *functions/package.json:* Contains a list of NPM package dependencies of this project
