@@ -114,7 +114,8 @@ To install all the required dependencies, select *Yes* for the question *“Do y
 You can also select *Yes* for Question *Do you want to use ESLint to catch probable bugs and enforce style*
 
 At this point, the firebase cloud function is set up and we are ready to start writing code but before that let's discuss a bit about the project structure
-Lookin into the folder we have the following files
+Looking into the folder we have the following files
+![alt text](https://github.com/ayodorigan/cloud-functions-tutorial/blob/main/fb-func/screenshots/Screenshot%202021-07-04%20at%2012.17.37.png)
 *node_modules:* is a directory where your dependencies (declared in package.json) are installed
 *firebase.json:* Describes properties for your project
 *functions/package.json:* Contains a list of NPM package dependencies of this project
@@ -220,6 +221,7 @@ When everything is ok, you deploy the functions/code to firebase using the follo
 ## Testing the app
 You can use post man to send data to realtime using get request or firebase using the following url</br>
 `https://[PROJECT_ID].firebaseio.com/fb-test.json?num=3`</br>
+![alt text](https://github.com/ayodorigan/cloud-functions-tutorial/blob/main/fb-func/screenshots/Screenshot%202021-07-04%20at%2014.44.38.png)
 where *PROJECT_ID* is the id of your project.
 this whole url can be found in the real-time DB page as the path. like below
 
